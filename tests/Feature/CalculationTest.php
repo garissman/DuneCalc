@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use App\Models\Calculation;
 use Inertia\Testing\AssertableInertia as Assert;
 use Tests\Concerns\HasPinnedSession;

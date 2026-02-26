@@ -19,6 +19,7 @@ vi.mock('@inertiajs/vue3', () => {
     const makeForm = () => ({
         expression: '',
         result: 0,
+        processing: false,
         post: postMock,
         put: putMock,
     });
@@ -84,6 +85,7 @@ describe('Calculator.vue', () => {
                 ({
                     expression: '',
                     result: 0,
+                    processing: false,
                     post: vi.fn(),
                     put: vi.fn(),
                 }) as unknown as InertiaForm<{
@@ -177,6 +179,23 @@ describe('Calculator.vue', () => {
         await input.setValue('5 * 5');
         await wrapper.vm.$nextTick();
         const submitBtn = wrapper.find('button:not([disabled])');
+        expect(submitBtn.exists()).toBe(true);
+    });
+
+    it('submit button is disabled while form is processing', async () => {
+        vi.mocked(useForm).mockReturnValue({
+            expression: '',
+            result: 0,
+            processing: true,
+            post: vi.fn(),
+            put: vi.fn(),
+        } as unknown as InertiaForm<{ expression: string; result: number }>);
+
+        const wrapper = mountCalculator();
+        const input = wrapper.find('input[type="text"]');
+        await input.setValue('5 * 5');
+        await wrapper.vm.$nextTick();
+        const submitBtn = wrapper.find('button[disabled]');
         expect(submitBtn.exists()).toBe(true);
     });
 
