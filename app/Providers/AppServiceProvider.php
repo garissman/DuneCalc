@@ -39,6 +39,8 @@ class AppServiceProvider extends ServiceProvider
             app()->isProduction(),
         );
 
+        // Pre-configured for a future auth layer: enforces strong passwords in
+        // production while keeping validation relaxed in development and tests.
         Password::defaults(fn (): ?Password => app()->isProduction()
             ? Password::min(12)
                 ->mixedCase()

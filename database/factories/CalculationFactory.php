@@ -12,7 +12,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 class CalculationFactory extends Factory
 {
     /**
-     * @return array{session_id: string, expression: string, result: int}
+     * @return array{session_id: string, expression: string, result: int|float}
      */
     public function definition(): array
     {
