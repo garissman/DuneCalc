@@ -16,7 +16,6 @@ export default defineConfig({
                 'resources/js/types/**',
                 'resources/js/actions/**',
                 'resources/js/routes/**',
-                'resources/js/pages/Welcome.vue',
             ],
             thresholds: {
                 lines: 100,
