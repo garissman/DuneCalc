@@ -26,10 +26,21 @@ jobs:
         with:
           php-version: '8.4'
 
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
       - name: Install Dependencies
         run: |
           composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
           npm ci
+
+      - name: Generate Application Key
+        run: cp .env.example .env && php artisan key:generate
+
+      - name: Build Assets
+        run: npm run build && rm -f public/hot
 
       - name: Check PHP Style
         run: ./vendor/bin/pint --test
