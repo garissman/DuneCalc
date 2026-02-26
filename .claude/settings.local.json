@@ -1,0 +1,33 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__laravel-boost__application-info",
+      "mcp__laravel-boost__database-schema",
+      "mcp__laravel-boost__database-query",
+      "mcp__laravel-boost__tinker",
+      "mcp__laravel-boost__list-routes",
+      "mcp__laravel-boost__search-docs",
+      "mcp__laravel-boost__browser-logs",
+      "mcp__laravel-boost__get-absolute-url",
+      "mcp__laravel-boost__get-config",
+      "mcp__laravel-boost__list-available-env-vars",
+      "mcp__laravel-boost__list-artisan-commands",
+      "mcp__plugin_playwright_playwright__browser_navigate",
+      "mcp__plugin_playwright_playwright__browser_click",
+      "mcp__plugin_playwright_playwright__browser_type",
+      "mcp__plugin_playwright_playwright__browser_snapshot",
+      "mcp__plugin_playwright_playwright__browser_run_code",
+      "mcp__plugin_playwright_playwright__browser_take_screenshot",
+      "mcp__plugin_playwright_playwright__browser_install",
+      "Bash(php artisan:*)",
+      "Bash(npm run:*)",
+      "Bash(npx prettier:*)",
+      "Bash(./vendor/bin/pest:*)",
+      "Bash(vendor/bin/pint:*)"
+    ]
+  },
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "laravel-boost"
+  ]
+}

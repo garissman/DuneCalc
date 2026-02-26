@@ -1,0 +1,12 @@
+services:
+  runner:
+    build:
+      context: docker/runner
+    env_file:
+      - .env.runner
+    volumes:
+      - runner_work:/home/runner/_work
+    restart: unless-stopped
+
+volumes:
+  runner_work:
