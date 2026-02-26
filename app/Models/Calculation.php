@@ -8,6 +8,11 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * @property string $session_id
+ * @method static forSession(string $getId)
+ * @method static create(array $array)
+ */
 class Calculation extends Model
 {
     /** @use HasFactory<\Database\Factories\CalculationFactory> */

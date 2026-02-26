@@ -20,8 +20,7 @@ class CalculationController extends Controller
      */
     public function index(): Response
     {
-        $calculations = Calculation::query()
-            ->forSession(session()->getId())
+        $calculations = Calculation::forSession(session()->getId())
             ->latest()
             ->get();
 
@@ -88,7 +87,7 @@ class CalculationController extends Controller
      */
     public function destroyAll(): RedirectResponse
     {
-        Calculation::query()->forSession(session()->getId())->delete();
+        Calculation::forSession(session()->getId())->delete();
 
         return back();
     }
