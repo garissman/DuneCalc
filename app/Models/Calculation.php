@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * @property string $session_id
+ *
  * @method static forSession(string $getId)
  * @method static create(array $array)
  */
