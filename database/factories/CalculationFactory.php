@@ -11,6 +11,9 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class CalculationFactory extends Factory
 {
+    /**
+     * @return array{session_id: string, expression: string, result: int}
+     */
     public function definition(): array
     {
         $a = fake()->numberBetween(1, 100);
